@@ -1,0 +1,17 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: 14
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+      - run: yarn lint

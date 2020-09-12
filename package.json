@@ -1,0 +1,77 @@
+{
+  "name": "react-panorama",
+  "version": "0.1.0",
+  "description": "React for Valve's Panorama UI (for Dota 2 Custom Games).",
+  "keywords": [
+    "dota",
+    "panorama",
+    "react",
+    "jsx"
+  ],
+  "repository": "https://github.com/ark120202/react-panorama",
+  "license": "MIT",
+  "author": "ark120202",
+  "exports": {
+    "development": "./dist/esm/react-panorama.development.js",
+    "production": "./dist/esm/react-panorama.production.js",
+    "default": "./dist/esm/react-panorama.development.js"
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*.{js,ts}"
+  ],
+  "scripts": {
+    "build": "rollup --config --environment BUILD_ENV:production",
+    "dev": "rollup --config --environment BUILD_ENV:development --watch",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --check .",
+    "prepublishOnly": "yarn build"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "proseWrap": "always",
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "project": "tsconfig.json"
+    },
+    "extends": "@ark120202/eslint-config/node",
+    "rules": {
+      "no-restricted-syntax": "off",
+      "prefer-arrow/prefer-arrow-functions": "off",
+      "node/no-unsupported-features/node-builtins": "off"
+    },
+    "ignorePatterns": "/dist"
+  },
+  "dependencies": {
+    "panorama-polyfill": "^0.1.0"
+  },
+  "devDependencies": {
+    "@ark120202/eslint-config": "^2.4.2",
+    "@ark120202/typescript-config": "^2.2.0",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-replace": "^2.3.3",
+    "@rollup/plugin-typescript": "^6.0.0",
+    "@types/node": "^14.10.0",
+    "@types/react": "^16.9.49",
+    "@types/react-reconciler": "^0.18.0",
+    "eslint": "^7.8.1",
+    "npm-run-all": "^4.1.5",
+    "panorama-types": "^1.5.2",
+    "prettier": "^2.1.1",
+    "react": "^17.0.0-rc.1",
+    "react-reconciler": "^0.25.1",
+    "rollup": "^2.26.11",
+    "rollup-plugin-dts": "1.4.13",
+    "rollup-plugin-prettier": "2.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.0.2"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1 || ^17.0.0"
+  }
+}
