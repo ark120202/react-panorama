@@ -19,7 +19,11 @@ function appendChild(parent: InternalPanel, child: InternalPanel) {
     parent = (parent as ContextMenuScriptPanel).GetContentsPanel();
   }
 
-  child.SetParent(parent);
+  if (parent === child.GetParent()) {
+    parent.MoveChildAfter(child, parent.GetChild(parent.GetChildCount() - 1)!);
+  } else {
+    child.SetParent(parent);
+  }
 }
 
 function insertBefore(parent: InternalPanel, child: InternalPanel, beforeChild: InternalPanel) {
