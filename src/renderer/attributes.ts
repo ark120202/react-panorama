@@ -79,6 +79,8 @@ const propertiesInformation: {
 } = {
   id: { type: PropertyType.INITIAL_ONLY, initial: false },
 
+  enabled: { type: PropertyType.SET, name: 'enabled', initial: true, throwOnIncomplete: true },
+  visible: { type: PropertyType.SET, name: 'visible', initial: true, throwOnIncomplete: true },
   hittest: { type: PropertyType.SET, name: 'hittest', initial: true, throwOnIncomplete: true },
   hittestchildren: {
     type: PropertyType.SET,

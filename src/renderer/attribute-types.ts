@@ -16,6 +16,8 @@ export interface PanelAttributes<T extends PanelBase = Panel> extends ClassAttri
   tabindex?: number | 'auto';
   inputnamespace?: string;
   draggable?: boolean;
+  enabled?: boolean;
+  visible?: boolean;
   // TODO: sectionpos?: 'auto';?
 
   onload?: EventHandler<T>;
