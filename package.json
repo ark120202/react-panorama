@@ -1,6 +1,6 @@
 {
   "name": "react-panorama",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React for Valve's Panorama UI (for Dota 2 Custom Games).",
   "keywords": [
     "dota",
